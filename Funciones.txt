@@ -1,0 +1,12 @@
+void iniciarSistema(){}
+void cargarDatos(){}
+void procesarInformacion(){}
+void validarUsuario(){}
+void guardarCambios(){}
+void cerrarSesion(){}
+void exportarReporte(){}
+viod calcularTotal(){}            
+void mostrarPantalla(){           
+voidfuncion(){}                        
+void imprimirDatos({}         
+void actualizarRegistro) {}       

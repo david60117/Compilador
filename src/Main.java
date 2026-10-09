@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
 
     static boolean verificador(String texto) {
@@ -37,7 +41,28 @@ public class Main {
         return s == 9;
     }
 
+    static public void leerYProcesarArchivo(String nombre) {
+        File myObj = new File(nombre + ".txt");
+        int ac = 0;
+        try (Scanner myReader = new Scanner(myObj)) {
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                if (verificador(data)) {
+                    ac+=1;
+                }
+            }
+            System.out.println(ac);
+        } catch (FileNotFoundException e) {
+            System.out.println("An error had occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(verificador("void funcion(String cad){}"));
+        Scanner in = new Scanner(System.in);
+        System.out.println("Nombre del archivo demo disponible es «Cuento»");
+        System.out.println("Ingrese el nombre del archivo (sin extension .txt): ");
+        String nombreArchivo = in.nextLine();
+        leerYProcesarArchivo(nombreArchivo);
     }
 }
